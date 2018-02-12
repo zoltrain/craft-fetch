@@ -40,7 +40,7 @@ class FetchVariable
           return [
             'statusCode' => $response->getStatusCode(),
             'reason' => $response->getReasonPhrase(),
-            'body' => json_decode($response->getBody(), true)
+            'body' => (string) $response->getBody(),
           ];
 
         } catch (\Exception $e) {
